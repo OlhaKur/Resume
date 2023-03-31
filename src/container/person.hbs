@@ -1,0 +1,66 @@
+<div>
+  {{#with person}}
+    <div>
+      <h1>{{name}}</h1>
+    </div>
+    <br />
+    {{#with address}}
+      <div>
+        <address>{{country}},
+          {{state}},
+          {{city}},
+          {{street}}
+        </address>
+      </div>
+    {{/with}}
+    <hr />
+
+ 
+</div>
+
+<div>
+   
+    {{> title data='Education'}} 
+    {{#each education}}     
+      <div>
+        <strong>{{university}} | {{major}} | {{degree}}</strong>
+      </div>
+    {{/each}}
+         
+    <br />
+    <hr />
+    <section>
+       {{> title data='Work Experience'}} 
+       {{#each workExperience}}
+          <div>
+            <em>{{title}} | {{company}}</em>
+          
+            <br />
+            <br />
+                <div>
+                  {{> title data='Responsibilities'}} 
+                  <ul>
+                     {{#each responsibilities}}
+                    <li>{{name}}</li>
+                    <li>{{isName}}</li>
+                    {{/each}}
+                   
+                  </ul>
+                    
+                     
+                </div>
+                <div>
+                  <h4>Projects</h4>
+                  <ul>
+                    {{#each employeesgit}}
+                    <li>{{name}}</li>
+                    <li></li>
+                    {{/each}}
+                  </ul>
+                </div>
+            
+          </div>
+      {{/each}}
+    </section>
+</div>
+{{/with}}
