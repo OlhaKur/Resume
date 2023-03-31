@@ -1,0 +1,71 @@
+<div>
+  <div>
+    <h1>{{name}}</h1>
+    <br />
+  </div>
+  <div>
+    <strong>{{birthdate}} - {{deathdate}}</strong>
+  </div>
+  <hr />
+  <br />
+  <section>
+    {{> title data='Education' big=true}}
+    {{#each education}}
+      <h4>{{degree}}
+        |
+        {{field}}
+        |
+        {{institution}}
+        - ({{year}})</h4>
+    {{/each}}
+  </section>
+  <br />
+  <hr />
+    <section>
+      {{> title data='Notable publications' big=true}} 
+
+      {{#each notable_publications}}
+      <ul>
+        <li>{{title}} ({{publisher}} - {{year}})</li>
+      </ul> 
+      {{/each}}
+    </section>
+    <h4>Partners</h4>
+    <div>    
+        {{#each partners}}
+        <ul>
+            <li>{{name}} - {{relationship}} ({{years}})</li>
+        </ul>
+        {{/each}}
+    </div>
+    <br />
+    <hr />
+    <section>
+    {{> title data='Awards' big=true}}
+     {{#each awards}}
+    <div>
+        <em>{{title}} ({{year}})</em>
+        <p>{{description}}</p>
+    </div>
+    {{/each}} 
+
+    </section>
+     <section>
+    {{> title data='Major Discoveries' big=true}} 
+    {{#each major_discoveries}}
+    <div>
+        <em>{{title}} ({{year}})</em>
+        <p>{{description}}</p>
+    </div>
+    {{/each}}
+    </section>
+        <section>
+    {{> title data='Contributions' big=true}} 
+    {{#with contributions}}
+    <div>
+        <em>{{title}} ({{year}})</em>
+        <p>{{description}} / {{field}}</p>
+    </div>
+    {{/with}}
+    </section>
+</div>
