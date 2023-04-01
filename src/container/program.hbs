@@ -1,0 +1,61 @@
+<div>
+  {{#each program}}
+  <div>
+    <h1>{{name}}</h1>
+    <br />
+  </div>
+
+  <div>
+    {{#with location}}
+    <h2>{{city}}  ({{country}})</h2>
+    {{/with}}
+    <strong>{{date}}</strong>
+  </div>
+  <hr />
+  <br />
+      <section>
+        {{> title data='Programs:' big=true}}
+        {{#each program}}
+          <h3>{{name}} - {{type}}</h3> 
+          {{#with details.museum}}
+          <h4>{{name}}</h4>
+          {{#with location}}
+          <em>{{address}}, {{city}}, {{country}}</em>        
+          {{/with}}
+            {{#each exhibits}}
+            <ul>
+              <li>
+                {{name}} ({{description}}) {{#if audio_guide}}{{/if}}
+              </li>
+            </ul>
+            {{/each}}
+          {{/with}}
+
+        
+
+          {{#with details.venue}}
+          <h4>{{name}}</h4>
+          {{#with location}}
+          <em>{{address}}, {{city}}, {{country}}</em> 
+          {{/with}}
+          {{/with}}
+
+          {{#each details.performers}}
+          <ul>
+            <li>{{name}} - {{type}}</li>
+          </ul>
+          {{/each}}
+
+          {{#with details.guide}}
+          <hr />
+          <p>{{name}} ({{language}} / {{rating}})</p>
+          <hr />
+          {{/with}}
+
+
+              
+        {{/each}}
+      </section>  
+   
+    {{/each}}
+</div>
