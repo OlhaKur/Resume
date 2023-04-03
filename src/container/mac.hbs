@@ -1,0 +1,66 @@
+<div>
+  <div class='card' style='width: 18rem;'>
+    <img src='...' class='card-img-top' alt='...' />
+    <div class='card-body'>
+      <h5 class='card-title'>{{name}}</h5>
+      <p class='card-text'>{{description}}</p>
+      <span class='badge text-bg-success'>{{price}}</span>
+    </div>
+    <ul class='list-group list-group-flush'>
+      <li class='list-group-item'>{{category}}</li>
+    </ul>
+    <div class='card-body'>
+      <a href='#' class='card-link'>Features</a>
+      <a href='#' class='card-link'>Home</a>
+    </div>
+  </div>
+  <br />
+  <hr />
+  <section>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th scope='col'>#</th>
+          <th scope='col'>Processor</th>
+          <th scope='col'>Memory</th>
+          <th scope='col'>Storage</th>
+          <th scope='col'>Display</th>
+          <th scope='col'>Graphics</th>
+          <th scope='col'>Battery</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope='row'>1</th>
+          <td>{{features.processor.brand}}</td>
+          <td>{{features.memory.type}}</td>
+          <td>{{features.storage.type}}</td>
+          <td>{{features.display.size}}</td>
+          <td>{{features.graphics.brand}}</td>
+          <td>{{features.battery.type}}</td>
+        </tr>
+        <tr>
+          <th scope='row'>2</th>
+          <td>{{features.processor.model}}</td>
+          <td>{{features.memory.size}}</td>
+          <td>{{features.storage.size}}</td>
+          <td>{{features.display.resolution}}</td>
+          <td>{{features.graphics.model}}</td>
+          <td>{{features.battery.capacity}}</td>
+        </tr>
+        <tr>
+          <th scope='row'>3</th>
+          <td>{{features.processor.speed}}</td>
+          <td>{{features.memory.speed}}</td>
+
+        </tr>
+        <tr>
+          <th scope='row'>4</th>
+          <td colspan='2'>L{{features.processor.cache}}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
