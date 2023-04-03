@@ -27,6 +27,8 @@
           <th scope='col'>Display</th>
           <th scope='col'>Graphics</th>
           <th scope='col'>Battery</th>
+          <th scope='col'>Weight</th>
+          <th scope='col'>OS</th>
         </tr>
       </thead>
       <tbody>
@@ -38,6 +40,8 @@
           <td>{{features.display.size}}</td>
           <td>{{features.graphics.brand}}</td>
           <td>{{features.battery.type}}</td>
+          <td>{{features.weight}}</td>
+          <td>{{features.operating_system}}</td>
         </tr>
         <tr>
           <th scope='row'>2</th>
@@ -56,7 +60,7 @@
         </tr>
         <tr>
           <th scope='row'>4</th>
-          <td colspan='2'>L{{features.processor.cache}}</td>
+          <td colspan='2'>{{features.processor.cache}}</td>
           <td></td>
         </tr>
       </tbody>
@@ -69,6 +73,17 @@
         <li>{{type}}
           ({{count}})</li>
       </ul>
+
+    {{/each}}
+  </section>
+  <div>
+    <h6>Accessories</h6>
+    {{#each features.accessories}}
+      <ul>
+        <li>{{name}} - {{price}}</li>
+      </ul>
+    {{/each}}
+  </div>
 
     {{/each}}
   </section>
