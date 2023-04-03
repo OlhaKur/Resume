@@ -1,0 +1,85 @@
+<div>
+  {{> title data='Java Script' big=true}} 
+  <div>
+    <h3>
+      {{description}}
+    </h3>
+  </div> 
+  <div>
+    {{#with history}}
+    <p>{{founder}} ({{year}})</p>
+    {{/with}}
+  </div>
+  <div>   
+    <em>
+     <input class="btn btn-primary" type="button" value="Number">
+     <input class="btn btn-primary" type="button" value="String">
+     <input class="btn btn-primary" type="button" value="Boolean">
+     <input class="btn btn-primary" type="button" value="Null">
+     <input class="btn btn-primary" type="button" value="Undefined">
+     <input class="btn btn-primary" type="button" value="Symbol">
+     <input class="btn btn-primary" type="button" value="Object">
+    </em>   
+  </div>
+   <br />
+   <hr />
+  <div>
+    <h4>Syntax</h4>
+    {{#with syntax}}
+   <ul>
+    <li>{{variables}}</li>
+    <li>{{functions}}</li>
+    <li>{{conditionals}}</li>
+    <li>{{loops}}</li>
+    <li>{{classes}}</li>
+   </ul>
+   {{/with}}
+  </div>
+  <br />
+  <hr />
+  <div>
+    <h4>Features</h4>
+  <button type="button" class="btn btn-outline-info">First-class functions</button>
+  <button type="button" class="btn btn-outline-info">Closures</button>
+  <button type="button" class="btn btn-outline-info">Dynamic typing</button>
+  <button type="button" class="btn btn-outline-info">Prototype-based inheritance</button>
+  <button type="button" class="btn btn-outline-info">Asynchronous programming with Promises and async/await</button>
+  <button type="button" class="btn btn-outline-info">Modules with import/export statements</button>
+  </div>
+  <div>
+    <h4>Libraries</h4>
+    <a class="btn btn-primary" href="#" role="button">jQuery</a>
+    <a class="btn btn-primary" href="#" role="button">React</a>
+    <a class="btn btn-primary" href="#" role="button">Angular</a>
+    <a class="btn btn-primary" href="#" role="button">Vue</a>
+    <a class="btn btn-primary" href="#" role="button">Node.js</a>
+    <a class="btn btn-primary" href="#" role="button">Express.js</a>
+    <a class="btn btn-primary" href="#" role="button">Lodash</a>
+    <a class="btn btn-primary" href="#" role="button">Moment.js</a>
+  </div>
+  <br />
+  <hr />
+  <div>
+   <h4>Tools</h4> 
+   <input class="btn btn-primary" type="button" value="Babel">
+   <input class="btn btn-primary" type="button" value="Webpack">
+   <input class="btn btn-primary" type="button" value="ESLint">
+   <input class="btn btn-primary" type="button" value="Jest">
+   <input class="btn btn-primary" type="button" value="Mocha">
+   <input class="btn btn-primary" type="button" value="Chai">
+   <input class="btn btn-primary" type="button" value="Selenium">
+   <input class="btn btn-primary" type="button" value="Cypress">
+  </div>
+  <br />
+  <hr />
+  <div>
+    {{#each community}}
+    <ul>
+      <li>
+        <a class="btn btn-primary" href="#" role="button">{{name}} ({{type}})</a>
+      </li>
+    </ul>
+    {{/each}}
+  </div>
+  
+</div>
