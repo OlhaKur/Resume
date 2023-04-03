@@ -62,5 +62,22 @@
       </tbody>
     </table>
   </section>
+  <section>
+    <h6>Ports</h6>
+    {{#each features.ports}}
+      <ul>
+        <li>{{type}}
+          ({{count}})</li>
+      </ul>
 
+    {{/each}}
+  </section>
+  <div>
+    <h6>Accessories</h6>
+    {{#each features.accessories}}
+      <ul>
+        <li>{{name}} - {{price}}</li>
+      </ul>
+    {{/each}}
+  </div>
 </div>
