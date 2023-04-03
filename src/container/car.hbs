@@ -1,10 +1,25 @@
 <div>
   <div>
-    <h1>{{make}} / {{model}}</h1>
+    <h1>{{make}}<span
+        class='badge bg-secondary'
+      >{{model}}</span></h1>
     <h3>{{year}} - {{color}}</h3>
   </div>
   <div>
-    {{#with features}}{{/with}}
+
+    <div class='alert alert-info' role='alert'>
+      Description
+    </div>
+    <div>
+      <button
+        type='button'
+        class='btn btn-outline-info'
+      >Features</button>
+    </div>
+
+{{!-- Щось у мене в цьому місці не виходить далі... я не розумію як має виглядати сторінка --}}
+    </div>
+
   </div>
 
 </div>
