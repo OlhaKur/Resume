@@ -1,85 +1,209 @@
 <div>
-  {{> title data='Java Script' big=true}} 
+  <h1 class='display-1 text-center'>{{name}}</h1>
   <div>
-    <h3>
+    <h5 class='text-primary text-center'>
       {{description}}
-    </h3>
-  </div> 
-  <div>
+    </h5>
+  </div>
+  <div class='card card-body'>
     {{#with history}}
-    <p>{{founder}} ({{year}})</p>
+      <p>{{founder}} ({{year}})</p>
     {{/with}}
-  </div>
-  <div>   
-    <em>
-     <input class="btn btn-primary" type="button" value="Number">
-     <input class="btn btn-primary" type="button" value="String">
-     <input class="btn btn-primary" type="button" value="Boolean">
-     <input class="btn btn-primary" type="button" value="Null">
-     <input class="btn btn-primary" type="button" value="Undefined">
-     <input class="btn btn-primary" type="button" value="Symbol">
-     <input class="btn btn-primary" type="button" value="Object">
-    </em>   
-  </div>
-   <br />
-   <hr />
-  <div>
-    <h4>Syntax</h4>
-    {{#with syntax}}
-   <ul>
-    <li>{{variables}}</li>
-    <li>{{functions}}</li>
-    <li>{{conditionals}}</li>
-    <li>{{loops}}</li>
-    <li>{{classes}}</li>
-   </ul>
-   {{/with}}
+
+    <div>
+      <em>
+        <input
+          class='btn btn-outline-secondary'
+          type='button'
+          value='Number'
+        />
+        <input
+          class='btn btn-outline-secondary'
+          type='button'
+          value='String'
+        />
+        <input
+          class='btn btn-outline-secondary'
+          type='button'
+          value='Boolean'
+        />
+        <input
+          class='btn btn-outline-secondary'
+          type='button'
+          value='Null'
+        />
+        <input
+          class='btn btn-outline-secondary'
+          type='button'
+          value='Undefined'
+        />
+        <input
+          class='btn btn-outline-secondary'
+          type='button'
+          value='Symbol'
+        />
+        <input
+          class='btn btn-outline-secondary'
+          type='button'
+          value='Object'
+        />
+      </em>
+    </div>
   </div>
   <br />
   <hr />
-  <div>
-    <h4>Features</h4>
-  <button type="button" class="btn btn-outline-info">First-class functions</button>
-  <button type="button" class="btn btn-outline-info">Closures</button>
-  <button type="button" class="btn btn-outline-info">Dynamic typing</button>
-  <button type="button" class="btn btn-outline-info">Prototype-based inheritance</button>
-  <button type="button" class="btn btn-outline-info">Asynchronous programming with Promises and async/await</button>
-  <button type="button" class="btn btn-outline-info">Modules with import/export statements</button>
+  <div class='card'>
+    <div class='card-body'>
+      <h4 class='text-center text-success'>Syntax</h4>
+      {{#with syntax}}
+        <ul class='text-muted'>
+          <li>{{variables}}</li>
+          <li>{{functions}}</li>
+          <li>{{conditionals}}</li>
+          <li>{{loops}}</li>
+          <li>{{classes}}</li>
+        </ul>
+      {{/with}}
+    </div>
   </div>
+  <br />
+
+  <div class='card'>
+    <div class='card-body'>
+      <h4>Features</h4>
+      <button
+        type='button'
+        class='btn btn-outline-info'
+      >First-class functions</button>
+      <button
+        type='button'
+        class='btn btn-outline-info'
+      >Closures</button>
+      <button
+        type='button'
+        class='btn btn-outline-info'
+      >Dynamic typing</button>
+      <button
+        type='button'
+        class='btn btn-outline-info'
+      >Prototype-based inheritance</button>
+      <button
+        type='button'
+        class='btn btn-outline-info'
+      >Asynchronous programming with Promises and
+        async/await</button>
+      <button
+        type='button'
+        class='btn btn-outline-info'
+      >Modules with import/export statements</button>
+    </div>
+  </div>
+  <br />
+  <br />
   <div>
     <h4>Libraries</h4>
-    <a class="btn btn-primary" href="#" role="button">jQuery</a>
-    <a class="btn btn-primary" href="#" role="button">React</a>
-    <a class="btn btn-primary" href="#" role="button">Angular</a>
-    <a class="btn btn-primary" href="#" role="button">Vue</a>
-    <a class="btn btn-primary" href="#" role="button">Node.js</a>
-    <a class="btn btn-primary" href="#" role="button">Express.js</a>
-    <a class="btn btn-primary" href="#" role="button">Lodash</a>
-    <a class="btn btn-primary" href="#" role="button">Moment.js</a>
+    <a
+      class='btn btn-outline-primary'
+      href='#'
+      role='button'
+    >jQuery</a>
+    <a
+      class='btn btn-outline-secondary'
+      href='#'
+      role='button'
+    >React</a>
+    <a
+      class='btn btn-outline-info'
+      href='#'
+      role='button'
+    >Angular</a>
+    <a
+      class='btn btn-outline-warning'
+      href='#'
+      role='button'
+    >Vue</a>
+    <a
+      class='btn btn-outline-dark'
+      href='#'
+      role='button'
+    >Node.js</a>
+    <a
+      class='btn btn-outline-danger'
+      href='#'
+      role='button'
+    >Express.js</a>
+    <a
+      class='btn btn-outline-success'
+      href='#'
+      role='button'
+    >Lodash</a>
+    <a
+      class='btn btn-outline-light'
+      href='#'
+      role='button'
+    >Moment.js</a>
   </div>
   <br />
-  <hr />
-  <div>
-   <h4>Tools</h4> 
-   <input class="btn btn-primary" type="button" value="Babel">
-   <input class="btn btn-primary" type="button" value="Webpack">
-   <input class="btn btn-primary" type="button" value="ESLint">
-   <input class="btn btn-primary" type="button" value="Jest">
-   <input class="btn btn-primary" type="button" value="Mocha">
-   <input class="btn btn-primary" type="button" value="Chai">
-   <input class="btn btn-primary" type="button" value="Selenium">
-   <input class="btn btn-primary" type="button" value="Cypress">
+
+  <div class='card'>
+    <div class='card-body'>
+      <h4 class='text-center'>Tools</h4>
+      <input
+        class='btn btn-primary'
+        type='button'
+        value='Babel'
+      />
+      <input
+        class='btn btn-secondary'
+        type='button'
+        value='Webpack'
+      />
+      <input
+        class='btn btn-success'
+        type='button'
+        value='ESLint'
+      />
+      <input
+        class='btn btn-warning'
+        type='button'
+        value='Jest'
+      />
+      <input
+        class='btn btn-danger'
+        type='button'
+        value='Mocha'
+      />
+      <input
+        class='btn btn-dark'
+        type='button'
+        value='Chai'
+      />
+      <input
+        class='btn btn-info'
+        type='button'
+        value='Selenium'
+      />
+      <input
+        class='btn btn-light'
+        type='button'
+        value='Cypress'
+      />
+    </div>
   </div>
   <br />
-  <hr />
-  <div>
-    {{#each community}}
-    <ul>
-      <li>
-        <a class="btn btn-primary" href="#" role="button">{{name}} ({{type}})</a>
-      </li>
-    </ul>
-    {{/each}}
+
+  <div class='card'>
+    <div class='card-body'>
+      {{#each community}}
+
+        <a
+          class='btn btn-link'
+          href='#'
+          role='button'
+        >{{name}} ({{type}})</a>
+
+      {{/each}}
+    </div>
   </div>
-  
+
 </div>
