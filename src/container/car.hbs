@@ -1,25 +1,86 @@
-<div>
+<main>
   <div>
-    <h1>{{make}}<span
-        class='badge bg-secondary'
+    <h1
+      class='display-2 text-dark text-center'
+    >{{make}}<span
+        class='badge bg-warning'
       >{{model}}</span></h1>
-    <h3>{{year}} - {{color}}</h3>
+    <h3 class='text-center'>{{year}} - {{color}}</h3>
   </div>
-  <div>
+  <br />
 
-    <div class='alert alert-info' role='alert'>
-      Description
-    </div>
-    <div>
-      <button
-        type='button'
-        class='btn btn-outline-info'
-      >Features</button>
-    </div>
+  <div class='card'>
+    <div class='card-body'>
+      {{#with features}}
+        <div class='card card-body'><h5
+            class='text-primary'
+          >Interior:</h5>
+          <h6>Seats:</h6>
+          {{#with interior}}
+            <p class='text-uppercase'>{{seats.material}}
+              |
+              {{seats.color}}</p>
+            <h6>Dashboard:</h6>
+            <p class='text-uppercase'>{{dashboard.material}}
+              |
+              {{dashboard.color}}
+              |
+              {{dashboard.display.type}}
+              ({{dashboard.display.resolution}})</p>
+            <h6>Audio:</h6>
+            <p class='text-uppercase'>{{audio.system}}
+              |
+              {{audio.speakers}}</p>
+          {{/with}}
+        </div>
+        <br />
 
-{{!-- Щось у мене в цьому місці не виходить далі... я не розумію як має виглядати сторінка --}}
-    </div>
+        <div class='card'>
+          <div class='card-body'>
+            {{#with exterior}}
+              <h5 class='text-primary'>Exterior:</h5>
+              <h6>Wheels:</h6>
 
+              <p class='text-uppercase'>{{wheels.type}}
+                |
+                {{wheels.size}}
+                |
+                {{wheels.color}}</p>
+              <h6>Headlights:</h6>
+              <p class='text-uppercase'>{{headlights.type}}
+                |
+                {{headlights.brightness}}</p>
+              <h6>Sunroof:</h6>
+              <p class='text-uppercase'>{{sunroof.type}}
+                |
+                {{sunroof.size}}</p>
+            {{/with}}
+          </div>
+        </div>
+        <br />
+
+      {{/with}}
+    </div>
   </div>
 
-</div>
+  <div class='card'>
+    <div class='card-body'>
+      {{#with engine}}
+        <h5 class='text-primary'>Engine:</h5>
+        <p>{{type}}
+          -
+          {{displacement}}
+          /
+          {{horsepower}}
+          /
+          {{torque}}
+          -
+          {{transmission.type}}</p>
+      {{/with}}
+    </div>
+  </div>
+  <span class='badge text-bg-success'>{{price.base}}</span>
+  <span
+    class='btn btn-lg text-success'
+  >{{price.total}}</span>
+</main>
