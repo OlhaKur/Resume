@@ -1,98 +1,111 @@
-<div>
-  <div class='card' style='width: 18rem;'>
-    <img src='...' class='card-img-top' alt='...' />
-    <div class='card-body'>
-      <h5 class='card-title'>{{name}}</h5>
-      <p class='card-text'>{{description}}</p>
-      <span class='badge text-bg-success'>{{price}}</span>
-    </div>
-    <ul class='list-group list-group-flush'>
-      <li class='list-group-item'>{{category}}</li>
-    </ul>
-    <div class='card-body'>
-      <a href='#' class='card-link'>Features</a>
-      <a href='#' class='card-link'>Home</a>
-    </div>
-  </div>
-  <br />
-  <hr />
-  <section>
-    <table class='table'>
-      <thead>
-        <tr>
-          <th scope='col'>#</th>
-          <th scope='col'>Processor</th>
-          <th scope='col'>Memory</th>
-          <th scope='col'>Storage</th>
-          <th scope='col'>Display</th>
-          <th scope='col'>Graphics</th>
-          <th scope='col'>Battery</th>
-          <th scope='col'>Weight</th>
-          <th scope='col'>OS</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope='row'>1</th>
-          <td>{{features.processor.brand}}</td>
-          <td>{{features.memory.type}}</td>
-          <td>{{features.storage.type}}</td>
-          <td>{{features.display.size}}</td>
-          <td>{{features.graphics.brand}}</td>
-          <td>{{features.battery.type}}</td>
-          <td>{{features.weight}}</td>
-          <td>{{features.operating_system}}</td>
-        </tr>
-        <tr>
-          <th scope='row'>2</th>
-          <td>{{features.processor.model}}</td>
-          <td>{{features.memory.size}}</td>
-          <td>{{features.storage.size}}</td>
-          <td>{{features.display.resolution}}</td>
-          <td>{{features.graphics.model}}</td>
-          <td>{{features.battery.capacity}}</td>
-        </tr>
-        <tr>
-          <th scope='row'>3</th>
-          <td>{{features.processor.speed}}</td>
-          <td>{{features.memory.speed}}</td>
-
-        </tr>
-        <tr>
-          <th scope='row'>4</th>
-          <td colspan='2'>{{features.processor.cache}}</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-  <section>
-    <h6>Ports</h6>
-    {{#each features.ports}}
-      <ul>
-        <li>{{type}}
-          ({{count}})</li>
-      </ul>
-
-    {{/each}}
-  </section>
+<main>
   <div>
-    <h6>Accessories</h6>
-    {{#each features.accessories}}
-      <ul>
-        <li>{{name}} - {{price}}</li>
-      </ul>
-    {{/each}}
+    <h1 class='display-3 text-primary'>{{name}}</h1>
+    <h4 class='text-centr'>{{description}}</h4>
+    <br />
+    <button
+      type='button'
+      class='btn btn-success position-relative'
+    >
+      {{price}}
+      <span
+        class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning'
+      >
+        {{category}}
+        <span class='visually-hidden'>unread messages</span>
+      </span>
+    </button>
   </div>
+  <section>
+    <div class='card'>
+      <div class='card-body'>
+        <h4>Features:</h4>
+        {{#with features}}
+          <h6 class='text-info'>Processor</h6>
+          {{#with processor}}
+            <p>{{brand}}
+              /
+              {{model}}
+              /
+              {{speed}}
+              /
+              {{cache}}</p>
+          {{/with}}
+          <br />
+          {{#with memory}}
+            <h6 class='text-info'>Memory</h6>
+            <p>
+              {{type}}
+              /
+              {{size}}
+              /
+              {{speed}}</p>
+          {{/with}}
+          <br />
+          {{#with storage}}
+            <h6 class='text-info'>Storage</h6>
+            <p>{{type}} / {{size}}</p>
+          {{/with}}
+          <br />
+          {{#with display}}
+            <h6 class='text-info'>Display</h6>
+            <p>{{size}}
+              /
+              {{resolution}}
+              /
+              {{technology}}
+              /
+              {{color_space}}
+              /
+              {{brightness}}
+              /
+              {{refresh_rate}}</p>
+          {{/with}}
+          <br />
+          {{#with graphics}}
+            <h6 class='text-info'>Graphics</h6>
+            <p>{{brand}} / {{model}} / {{memory}}</p>
+          {{/with}}
+          <br />
+          <div class='card'>
+            <div class='card-body'>
+              <h6 class='text-success'>Ports</h6>
+              {{#each ports}}
+                <ul>
+                  <li>{{type}} - {{count}}</li>
+                </ul>
+              {{/each}}
+            </div>
+          </div>
+          <br />
+          {{#with battery}}
+            <h6 class='text-info'>Battery</h6>
+            <p>{{type}} / {{capacity}} / {{life}}</p>
+          {{/with}}
+          <br />
 
-    {{/each}}
+          <h6 class='text-info'>Dimensions:</h6>
+          {{#with dimensions}}
+            <p>{{height}} / {{width}} / {{depth}}</p>
+          {{/with}}
+          <h6 class='text-success'>Weight: ({{weight}})</h6>
+          <h6 class='text-success'>OS: ({{operating_system}})</h6>
+          <br />
+
+          <h6 class='text-info'>Accessories:</h6>
+          {{#each accessories}}
+            <a class='btn btn-link'>
+              {{name}}
+              -
+              <span
+                class='badge text-bg-success'
+              >{{price}}</span>
+            </a>
+          {{/each}}
+
+        {{/with}}
+      </div>
+    </div>
   </section>
-  <div>
-    <h6>Accessories</h6>
-    {{#each features.accessories}}
-      <ul>
-        <li>{{name}} - {{price}}</li>
-      </ul>
-    {{/each}}
-  </div>
-</div>
+
+</main>
