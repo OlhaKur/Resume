@@ -1,0 +1,226 @@
+<main>
+  <div>
+    <section>
+      {{#with navigation}}
+        <div>
+          {{#each links}}
+            <a class='text-primary' href='#'>{{text}}</a>
+          {{/each}}
+          <a
+            href='https://nodejs.org/en/'
+            class='btn btn-primary'
+          >{{button.text}}</a>
+        </div>
+      {{/with}}
+    </section>
+    <br />
+    <hr />
+    <br />
+
+    <div>
+      {{#with header}}
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        <a class='btn btn-primary'>{{button.text}}</a>
+      {{/with}}
+    </div>
+    <br />
+    <hr />
+    <br />
+    <section class='col-12'>
+      <div>
+        {{#with city}}
+          <h2>{{title}}</h2>
+          <div class='container overflow-hidden'>
+            <div class='row g-4'>
+              {{#each cards}}
+
+                <div class='col-5 g-4'>
+                  <div class='card'>
+                    <img
+                      src='https://picsum.photos/400/200'
+                      class='card-img-top'
+                      alt={{alt}}
+                    />
+                    <div class='card-body'>
+
+                      <h5 class='card-title'>{{title}}</h5>
+                      <p
+                        class='card-text'
+                      >{{description}}</p>
+                      <a
+                        href='https://github.com/'
+                        class='btn btn-primary'
+                      >{{button.text}}</a>
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        {{/with}}
+      </div>
+    </section>
+
+    <br />
+    <hr />
+    {{#with winner}}
+      <h2>{{title}}</h2>
+      {{#with table}}
+        <table class='table'>
+          <thead>
+            <tr>
+              <th scope='col'>#</th>
+              <th scope='col'>Name</th>
+              <th scope='col'>Surname</th>
+              <th scope='col'>Nickname</th>
+            </tr>
+          </thead>
+          {{#each user}}
+            <tbody>
+              <tr>
+                <th scope='row'>{{place}}</th>
+                <td>{{name}}</td>
+                <td>{{surname}}</td>
+                <td>{{nickname}}</td>
+              </tr>
+
+            </tbody>
+          {{/each}}
+        </table>
+      {{/with}}
+    {{/with}}
+    <br />
+    <hr />
+    <br />
+    {{#with gallery}}
+      <div class='row col-12'>
+        <h2>{{title}}</h2>
+        {{#each cards}}
+          <div class='card col-4'>
+            <div class='card-header'>
+              {{name}}
+            </div>
+            {{! Ось тут не розумію, як роз'єднати item }}
+            <ul class='list-group list-group-flush'>
+              <li class='list-group-item'>{{items}}</li>
+              <li class='list-group-item'>{{items}}</li>
+              <li class='list-group-item'>{{items}}</li>
+              {{! щоб кожна назва виводилась окремо }}
+            </ul>
+          </div>
+        {{/each}}
+      </div>
+    {{/with}}
+    <br />
+    <hr />
+    <section class='col-12'>
+      <div>
+        {{#with relaxion}}
+          <h4 class='display-3'>{{title}}</h4>
+          <div class='row g-3 my-4'>
+            {{#each cards}}
+              <div class='card col-5 g-4 text-bg-secondary'>
+                <div class='card-header'>
+                  <p>{{header}}</p>
+                </div>
+                <div class='card-body'>
+                  <h5 class='card-titile'>{{title}}</h5>
+                  <p>{{description}}</p>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        {{/with}}
+      </div>
+    </section>
+    <br />
+    <hr />
+    <section>
+      {{#with rest}}
+        <div class='row col-12'>
+          {{#each cards}}
+            <div class='card row col-4 text-center'>
+              <div class='card-header'>
+                <p>{{header}}</p>
+              </div>
+              <div class='card-body'>
+                <h5 class='card-title'>{{title}}</h5>
+                <p>{{description}}</p>
+                <button
+                  class='btn btn-primary'
+                >{{button}}</button>
+              </div>
+              <div class='card-footer'>
+                <p>{{footer}}</p>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/with}}
+    </section>
+
+    <br />
+    <hr />
+    <section>
+      {{#with proposition}}
+        <div class='row col-12'>
+          <div class='display-2'>
+            {{title}}
+          </div>
+          {{#each card}}
+            <div
+              class='text-bg-warning text-light card row col-4'
+            >
+              <div class='card-header'>
+                <h5>{{header}}</h5>
+              </div>
+              <div class='card-body'>
+                <p>{{description}}</p>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/with}}
+    </section>
+    <br />
+    <br />
+    <hr />
+    {{! Ось тут треба таблицю робити??? Чи є варіант, щоб списком залишити? }}
+    <section>
+      {{#with footer}}
+        <div>
+          <h5>{{title}}</h5>
+        </div>
+        {{#each navigation}}
+          <ul class='list-group-flush'>
+            <li
+              class='list-group-item text-primary'
+              href='#'
+            >{{text}}</li>
+          </ul>
+        {{/each}}
+        {{#each socialMedia}}
+          <ul class='list-group-flush'>
+            <li class='list-group-item'>
+              <a
+                href='#'
+                class='btn btn-outline-dark'
+              >{{name}}</a></li>
+          </ul>
+        {{/each}}
+        {{#each partners}}
+          <ul class='list-group-flush'>
+            <li class='list-group-item'>
+              <a
+                href='#'
+                class='btn btn-outline-info'
+              >{{name}}</a></li>
+          </ul>
+        {{/each}}
+      {{/with}}
+    </section>
+    <br />
+
+  </div>
+</main>
