@@ -1,3 +1,17 @@
+
+<main>
+ 
+    {{#with navigation}}          
+     <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body d-flex justify-content-between">
+            <h1>{{Logo}}</h1>
+            <div class="nav d-flex align-items-center">
+              {{#each links}}
+              <div class="nav-item">
+                <a class="nav-link {{#if @last}}disabled{{/if}}" href="{{href}}">{{text}}</a>
+
 <main class="p-5">
   <div class='row'>
     <div class='col-12 g-4'>
@@ -13,12 +27,16 @@
                   <a class='text-link text-end' href="{{this.href}}">{{text}}</a>                  
                 {{/each}}
               </div>
+              {{/each}}
             </div>
           </div>
-        {{/with}}
-      </section>
+        </div>
+      </div>
+     </div> 
+    {{/with}}
+            
       <br />
-      <hr />
+     
       <section class='row col-12'>
         {{#with newsBlock}}
           <h2 class='text-center'>{{title}}</h2>
@@ -48,29 +66,36 @@
       </section>
       <br />
       <hr />
-      <section class='row g-4'>        
+      <section class='row col-12 g-4'>  
+
         {{#with goodsBlock}}             
-                {{#each tabs}}
-                <div class="col-12">
-                  <div class='nav nav-tabs'>
-                    <div class='nav-item mb-2'>
-                     {{#if isActive}}
-                        <a
-                          class='nav-link active'
-                        >{{text}}</a>
-                      {{else}}
-                        <a
-                          class='nav-link disabled'
-                        >{{text}}</a>
-                      {{/if}}
-                     </div>
-                    </div>
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                   <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                       {{#each tabs}}
+                          <li class="nav-item text-primary">
+                          {{#if isActive}}
+                            <a
+                              class='nav-link active'
+                            >{{text}}</a>
+                          {{else}}
+                            <a
+                              class='nav-link disabled'
+                            >{{text}}</a>
+                          {{/if}}
+                          </li>
+                       {{/each}}
+                    </ul>               
                   </div>
-                {{/each}}         
+                </div>
+              </div>
+            </div>           
           <br />
           <br />
           {{#each cards}}
-            <div class='card col-4 m-1'>
+            <div class='card col-3 mx-1'>
 
               <img
                 src='{{this.image}}'
@@ -100,12 +125,13 @@
       <br />
       <hr />
      
-      <section class='col-12'>
+      <section class='row col-12'>
         {{#with subscribe}}
           <div class='card text-bg-dark'>
             <div class='card-body'>
               <h2 class='col-3'>{{header}}</h2>
               <p class='col-3'>{{description}}</p>
+   
               {{#each buttons}}
                 <a
                   class='btn btn-primary col-3' href="{{this.link}}"
@@ -137,8 +163,7 @@
       </section>
       <br />
       <br />
-      <section>
-       
+      <section class="row col-12">        
           {{#each footer}}
             <div class='nav col-2'>
               <div>
@@ -149,8 +174,7 @@
                 {{/each}}
               </div>
             </div>
-          {{/each}}
-       
+          {{/each}}                 
       </section>
 
     </div>
