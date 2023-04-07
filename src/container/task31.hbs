@@ -4,7 +4,10 @@
       {{#with navigation}}
         <div>
           {{#each links}}
-            <a class='text-primary' href='#'>{{text}}</a>
+            <a
+              class='text-primary'
+              href='{{this.href}}'
+            >{{text}}</a>
           {{/each}}
           <a
             href='{{this.href}}'
@@ -21,27 +24,32 @@
       {{#with header}}
         <h1>{{title}}</h1>
         <p>{{description}}</p>
-        <a href="{{this.link}}" class='btn btn-primary'>{{button.text}}</a>
+        <a
+          href='{{this.link}}'
+          class='btn btn-primary'
+        >{{button.text}}</a>
       {{/with}}
     </div>
     <br />
     <hr />
     <br />
-    <section class='col-12'>
+    <section class='row col-12'>
       <div>
         {{#with city}}
           <h2>{{title}}</h2>
           <div class='container overflow-hidden'>
-            <div class='row g-4'>
+            <div class='row g-2'>
               {{#each cards}}
 
                 <div class='col-5 g-4'>
                   <div class='card'>
+
                     <img
                       src='{{this.src}}'
                       class='card-img-top'
-                      alt={{alt}}
+                      alt='{{this.alt}}'
                     />
+
                     <div class='card-body'>
 
                       <h5 class='card-title'>{{title}}</h5>
@@ -49,7 +57,7 @@
                         class='card-text'
                       >{{description}}</p>
                       <a
-                        href='https://github.com/'
+                        href='{{this.href}}'
                         class='btn btn-primary'
                       >{{button.text}}</a>
                     </div>
@@ -68,6 +76,7 @@
       <h2>{{title}}</h2>
       {{#with table}}
         <table class='table'>
+
           <thead>
             <tr>
               <th scope='col'>#</th>
@@ -76,6 +85,7 @@
               <th scope='col'>Nickname</th>
             </tr>
           </thead>
+
           {{#each user}}
             <tbody>
               <tr>
@@ -196,7 +206,7 @@
           <ul class='list-group-flush'>
             <li
               class='list-group-item text-primary'
-              href='#'
+              href='{{this.href}}'
             >{{text}}</li>
           </ul>
         {{/each}}
@@ -204,7 +214,7 @@
           <ul class='list-group-flush'>
             <li class='list-group-item'>
               <a
-                href='#'
+                href='{{this.link}}'
                 class='btn btn-outline-dark'
               >{{name}}</a></li>
           </ul>
@@ -213,7 +223,7 @@
           <ul class='list-group-flush'>
             <li class='list-group-item'>
               <a
-                href='#'
+                href='{{this.link}}'
                 class='btn btn-outline-info'
               >{{name}}</a></li>
           </ul>
