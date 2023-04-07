@@ -1,24 +1,26 @@
 <main>
   <div class='row'>
     <div class='col-12 g-4'>
-      <section>
+      <section class="col-12">
         {{#with navigation}}
           <div class='card'>
-            <div class='col-4'><h4
-                class='text-uppercase'
-              >{{Logo}}</h4></div>
-            <div class='card-body text-end'>
-              <div class='col-12'>
-                {{#each links}}                 
-                  <a class='text-link text-end' href="{{this.href}}">{{text}}</a>                  
-                {{/each}}
-              </div>
+            <h4 class='col-2 mt-3 mx-3 text-uppercase'
+              >{{Logo}}</h4>
+            <div class='card-body'>     
+ {{!--Ось тут не розумію, чому всі елементи вертикально вивелись? --}}
+                {{#each links}}
+                <div class="nav col-10"> 
+                  <div class="nav-item text-end">             
+                  <a class='nav-link text-primary' href="{{this.href}}">{{text}}</a> 
+                  </div>  
+                </div>                  
+                {{/each}}             
             </div>
           </div>
         {{/with}}
       </section>
       <br />
-      <hr />
+     
       <section class='row col-12'>
         {{#with newsBlock}}
           <h2 class='text-center'>{{title}}</h2>
@@ -48,11 +50,12 @@
       </section>
       <br />
       <hr />
-      <section class='row g-4'>        
+      <section class='row col-12 g-4'>  
+{{!-- Ось тут проблема, не розумію, як виправити наступну секцію--}}
         {{#with goodsBlock}}             
                 {{#each tabs}}
-                <div class="col-12">
-                  <div class='nav nav-tabs'>
+                <div>
+                  <div class='nav nav-tabs col-3'>
                     <div class='nav-item mb-2'>
                      {{#if isActive}}
                         <a
@@ -70,7 +73,7 @@
           <br />
           <br />
           {{#each cards}}
-            <div class='card col-4 m-1'>
+            <div class='card col-3 mx-1'>
 
               <img
                 src='{{this.image}}'
@@ -100,12 +103,13 @@
       <br />
       <hr />
      
-      <section class='col-12'>
+      <section class='row col-12'>
         {{#with subscribe}}
           <div class='card text-bg-dark'>
             <div class='card-body'>
               <h2 class='col-3'>{{header}}</h2>
               <p class='col-3'>{{description}}</p>
+     {{!--Як зробити кнопки праворуч?  --}}
               {{#each buttons}}
                 <a
                   class='btn btn-primary col-3' href="{{this.link}}"
@@ -137,8 +141,7 @@
       </section>
       <br />
       <br />
-      <section>
-       
+      <section class="row col-12">        
           {{#each footer}}
             <div class='nav col-2'>
               <div>
@@ -149,8 +152,7 @@
                 {{/each}}
               </div>
             </div>
-          {{/each}}
-       
+          {{/each}}                 
       </section>
 
     </div>
