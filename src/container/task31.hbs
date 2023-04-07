@@ -21,7 +21,10 @@
       {{#with header}}
         <h1>{{title}}</h1>
         <p>{{description}}</p>
-        <a href="{{this.link}}" class='btn btn-primary'>{{button.text}}</a>
+        <a
+          href='{{this.link}}'
+          class='btn btn-primary'
+        >{{button.text}}</a>
       {{/with}}
     </div>
     <br />
@@ -49,7 +52,7 @@
                         class='card-text'
                       >{{description}}</p>
                       <a
-                        href='https://github.com/'
+                        href='{{this.href}}'
                         class='btn btn-primary'
                       >{{button.text}}</a>
                     </div>
@@ -196,7 +199,7 @@
           <ul class='list-group-flush'>
             <li
               class='list-group-item text-primary'
-              href='#'
+              href='{{this.href}}'
             >{{text}}</li>
           </ul>
         {{/each}}
@@ -204,7 +207,7 @@
           <ul class='list-group-flush'>
             <li class='list-group-item'>
               <a
-                href='#'
+                href='{{this.link}}'
                 class='btn btn-outline-dark'
               >{{name}}</a></li>
           </ul>
@@ -213,7 +216,7 @@
           <ul class='list-group-flush'>
             <li class='list-group-item'>
               <a
-                href='#'
+                href='{{this.link}}'
                 class='btn btn-outline-info'
               >{{name}}</a></li>
           </ul>
