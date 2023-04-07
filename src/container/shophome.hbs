@@ -11,21 +11,6 @@
               {{#each links}}
               <div class="nav-item">
                 <a class="nav-link {{#if @last}}disabled{{/if}}" href="{{href}}">{{text}}</a>
-
-<main class="p-5">
-  <div class='row'>
-    <div class='col-12 g-4'>
-      <section>
-        {{#with navigation}}
-          <div class='card'>
-            <div class='col-4'><h4
-                class='text-uppercase'
-              >{{Logo}}</h4></div>
-            <div class='card-body text-end'>
-              <div class='col-12'>
-                {{#each links}}                 
-                  <a class='text-link text-end' href="{{this.href}}">{{text}}</a>                  
-                {{/each}}
               </div>
               {{/each}}
             </div>
