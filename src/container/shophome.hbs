@@ -1,24 +1,24 @@
 <main>
-  <div class='row'>
-    <div class='col-12 g-4'>
-      <section class="col-12">
-        {{#with navigation}}
-          <div class='card'>
-            <h4 class='col-2 mt-3 mx-3 text-uppercase'
-              >{{Logo}}</h4>
-            <div class='card-body'>     
- {{!--Ось тут не розумію, чому всі елементи вертикально вивелись? --}}
-                {{#each links}}
-                <div class="nav col-10"> 
-                  <div class="nav-item text-end">             
-                  <a class='nav-link text-primary' href="{{this.href}}">{{text}}</a> 
-                  </div>  
-                </div>                  
-                {{/each}}             
+ 
+    {{#with navigation}}          
+     <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body d-flex justify-content-between">
+            <h1>{{Logo}}</h1>
+            <div class="nav d-flex align-items-center">
+              {{#each links}}
+              <div class="nav-item">
+                <a class="nav-link {{#if @last}}disabled{{/if}}" href="{{href}}">{{text}}</a>
+              </div>
+              {{/each}}
             </div>
           </div>
-        {{/with}}
-      </section>
+        </div>
+      </div>
+     </div> 
+    {{/with}}
+            
       <br />
      
       <section class='row col-12'>
@@ -51,25 +51,31 @@
       <br />
       <hr />
       <section class='row col-12 g-4'>  
-{{!-- Ось тут проблема, не розумію, як виправити наступну секцію--}}
+
         {{#with goodsBlock}}             
-                {{#each tabs}}
-                <div>
-                  <div class='nav nav-tabs col-3'>
-                    <div class='nav-item mb-2'>
-                     {{#if isActive}}
-                        <a
-                          class='nav-link active'
-                        >{{text}}</a>
-                      {{else}}
-                        <a
-                          class='nav-link disabled'
-                        >{{text}}</a>
-                      {{/if}}
-                     </div>
-                    </div>
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                   <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs">
+                       {{#each tabs}}
+                          <li class="nav-item text-primary">
+                          {{#if isActive}}
+                            <a
+                              class='nav-link active'
+                            >{{text}}</a>
+                          {{else}}
+                            <a
+                              class='nav-link disabled'
+                            >{{text}}</a>
+                          {{/if}}
+                          </li>
+                       {{/each}}
+                    </ul>               
                   </div>
-                {{/each}}         
+                </div>
+              </div>
+            </div>           
           <br />
           <br />
           {{#each cards}}
@@ -109,7 +115,7 @@
             <div class='card-body'>
               <h2 class='col-3'>{{header}}</h2>
               <p class='col-3'>{{description}}</p>
-     {{!--Як зробити кнопки праворуч?  --}}
+   
               {{#each buttons}}
                 <a
                   class='btn btn-primary col-3' href="{{this.link}}"
