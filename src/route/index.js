@@ -1850,4 +1850,40 @@ router.get('/shophome', function (req, res) {
 
 // ================================================================
 
+router.get('/list', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('list', {
+    layout: 'basic',
+    list: [
+      { name: 'First Button' },
+      { name: 'Secondary Button' },
+      { name: 'Error Button' },
+      { name: 'Submit Button' },
+    ],
+    user: {
+      name: {
+        value: 'Ivan',
+        text: 'Ivanov',
+      },
+      role: {
+        text: 'Admin',
+      },
+      isConfirm: {
+        value: true,
+      },
+      age: {
+        value: 32,
+      },
+    },
+    users: {
+      name: 'Ivan',
+      role: 'Admin',
+      isConfirm: true,
+      age: 32,
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
 module.exports = router
