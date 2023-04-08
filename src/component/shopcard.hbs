@@ -1,0 +1,22 @@
+{{#each cards}}
+  <div class='card col-3 mx-1'>
+
+    <img src='{{this.image}}' class='card-img-top' />
+    <div class='card-header'>
+      <h5 class='card-title'>{{title}}</h5>
+      {{#unless isHot}}
+        <span class='badge bg-warning'>
+          <div class='rounder-pill'>Hot</div>
+        </span>
+      {{/unless}}
+      {{#unless idNew}}
+        <span class='badge bg-primary'>
+          <div class='rounder-pill'>New</div>
+        </span>
+      {{/unless}}
+    </div>
+    <div class='card-body'>
+      <p class='card-text'>{{description}}</p>
+    </div>
+  </div>
+{{/each}}
