@@ -19,8 +19,9 @@
       crossorigin='anonymous'
     />
   </head>
+   {{> shopheader}}
 
-  <body>
+  <body class='m-5'>
 
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
     {{{body}}}
@@ -31,4 +32,6 @@
 
   </body>
 
+  {{> shopfooter}}
+  
 </html>
