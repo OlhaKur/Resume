@@ -1,0 +1,11 @@
+<div class='mt-5'>
+  <nav aria-label='breadcrumb'>
+    <ol class='breadcrumb'>
+      {{#each breadcrumb}}      
+        <li class='breadcrumb-item'>
+            <a class='breadcrumb-item {{#if @last}}active{{/if}}' href='{{#if url}}{{url}}{{/if}}'>{{name}}</a>
+        </li>       
+      {{/each}}
+    </ol>
+  </nav>
+</div>
