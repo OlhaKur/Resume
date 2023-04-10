@@ -1,16 +1,16 @@
 <div clss='row col-12'>
-      {{#with newsOtherBlock}}
-        <h2 class='text-center m-4'>{{title}}</h2>
-        {{#each cards}}
-          <div class='col-3'>
-            <div class='card text-bg-dark mb-1 ms-1'>
-              <div class='card-header'>
-                <h6>{{title}}
-                  {{#if isTop}}
-                    <span class='badge bg-danger'>
-                      <div class='rounder-pill'>Top</div>
-                    </span>
-                  {{/if}}
+  {{#with newsOtherBlock}}
+    <h2 class='text-center m-4'>{{title}}</h2>
+    {{#each cards}}
+      <div class='col-3'>
+        <div class='card text-bg-dark mb-1 ms-1'>
+          <div class='card-header'>
+            <h6>{{title}}
+              {{#if isTop}}
+                <span class='badge bg-danger'>
+                  <div class='rounder-pill'>Top</div>
+                </span>
+              {{/if}}
 
               {{#if idNew}}
                 <span class='badge bg-success'>
@@ -19,6 +19,8 @@
               {{/if}}
             </h6>
           </div>
-        {{/each}}
-      {{/with}}  
+        </div>
+      </div>
+    {{/each}}
+  {{/with}}
 </div>
