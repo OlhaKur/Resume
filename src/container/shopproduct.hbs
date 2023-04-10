@@ -1,16 +1,12 @@
 
 <main>
  <div class="mt-5">
-      <nav aria-label="breadcrumb mb-3 d-flex justify-content-between">
+      <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-           {{#each breadcrumb}}
-           {{#if url}}
+           {{#each breadcrumb}}         
             <li class="breadcrumb-item">
-              <a href="{{url}}">{{name}}</a>
-            </li>
-            {{else}}
-            <li class="breadcrumb-item active"  aria-current="page">{{name}}</li>
-            {{/if}} 
+              <a class="breadcrumb-item {{#if @last}}active{{/if}}" href="{{#if url}}{{url}}{{/if}}">{{name}}</a>
+            </li>           
             {{/each}}             
         </ol>
       </nav>
