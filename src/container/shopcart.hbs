@@ -1,0 +1,52 @@
+<main>
+  <div class='row'>
+    {{#with header}}
+      <div class='col-8 my-5'>
+        <h2>{{title}}</h2>
+      </div>
+      {{#with button}}
+        <div class='col-4 my-5'>
+          <a
+            class='btn btn-outline-dark'
+            href='{{link}}'
+          >{{text}}</a>
+        </div>
+      {{/with}}
+    {{/with}}
+    <hr class="mb-5" />
+  {{!-- Не виходить компонент зробити горизонтально --}}
+  {{> cartGoodsItem}}
+  {{!-- Потрібна допомога --}}
+
+<hr class="my-5"/>
+  {{#with total}}
+  <div class="col-12 my-5">
+        <div class="col-6">
+          <h4>{{title}}</h4>
+          <h3>{{amount}}</h3>
+          <p>{{delivery}}</p>
+        </div>
+        <div class="col-6">
+          {{#each buttons}}
+            {{#if isSuccess}}
+            <a class="btn btn-success" href="{{link}}">{{text}}</a>
+            {{/if}}
+            {{#if isOutline}}
+            <a class="btn btn-outline-success" href="{{link}}">{{text}}</a>
+            {{/if}}
+          {{/each}}
+        </div>
+  </div>
+  {{/with}}
+<hr />
+
+{{#with goodsOtherBlock}}
+<h3 class="text-center">{{title}}</h3>
+{{> shopcard}}
+{{/with}}
+<hr class="my-5"/>
+
+{{> shopblackfooter}}
+
+  </div>
+</main>
