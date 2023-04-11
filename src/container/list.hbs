@@ -1,9 +1,15 @@
 <div>
+  <div>
+    <img src="/svg/img.svg">
+    <img src="/svg/user.svg">
+
+  </div>
   <ul>
     {{#each list}}
       <li>
 
        <button {{#if @last}}disabled{{/if}}>{{name}} - {{@index}}</button>
+       
       </li>
     {{/each}}
   <br />
