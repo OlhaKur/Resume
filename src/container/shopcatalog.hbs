@@ -1,0 +1,116 @@
+<main>
+  <div class='row'>
+    {{> breadcrumb}}
+    <h2>{{header}}</h2>
+        {{#each sortBlock}}
+            <div class="col-3">
+             
+            <select class="form-select" value="{{placeholder}}">
+                {{#each options}}
+                <option value="{{value}}">{{text}}</option>
+                {{/each}}
+            </select>
+            </div>
+        {{/each}}
+{{!-- Фільтр на 4 колонки --}}
+    <div class="col-4">
+        <div class="card mt-5">
+            <div class="card-body">
+                    {{#with filterBlock}}
+                        {{#with sellers}}
+                            <p>{{title}}</p>
+                           {{#each list}}
+                                <div class="form-check">                           
+                                    <label class="form-check-label">{{value}}</label>
+                                    <input type="checkbox" class="form-check-input">                               
+                                </div>
+                            {{/each}}
+                        {{/with}}
+                        <hr class="my-3"/>
+                        {{#with brands}}
+                            <p>{{title}}</p>
+                            {{#with input}}
+                                <input class="form-control" value="{{placeholder}}">
+                            {{/with}}
+                            {{#each options}}
+                                 <div class="form-check mt-2">                           
+                                    <label class="form-check-label">{{value}}</label>
+                                    <input type="checkbox" class="form-check-input">                               
+                                </div>
+                            {{/each}}
+                        {{/with}}
+                        <hr class="my-3"/>
+
+                        {{#with price}}
+                            <p>{{title}}</p>
+                            {{#with range}}
+                                <input class="form-control my-2" value="{{from}}">
+                                <input class="form-control my-2" value="{{to}}">
+                            {{/with}}
+                            {{#with button}}
+                                <a class="btn btn-outline-secondary" href="{{link}}">{{text}}</a>
+                            {{/with}}
+                        {{/with}}
+                        <hr class="my-3" />
+
+                        {{#each filterList}}
+                                <div class="form-label mt-4">{{title}}</div>
+                                {{#each options}}
+                                        
+                                        <div class="form-check mt-2">                           
+                                        <label class="form-check-label">{{value}}</label>
+                                        <input type="checkbox" class="form-check-input">                               
+                                        </div>
+                                {{/each}}
+                        {{/each}}
+                    {{/with}}
+          </div>
+        </div>
+    </div> 
+       {{!Кінець фільтру--  --}}
+    <div class="col-8">        
+            {{#each goodsList}}
+                <div class="card col-4 mt-5">
+                    <img src="{{img}}" class="card-img-top">
+                    <div class="card-body">
+                        {{#if isHot}}
+                        <span class="badge rounded-pill text-bg-primary">HOT</span>
+                        {{/if}}
+                        {{#if isNew}}
+                        <span class="badge rounded-pill text-bg-warning text-ligth">NEW</span>
+                        {{/if}}
+                        {{#if isFast}}
+                         <span class="badge text-bg-success mt-2">Швидка доставка</span>
+                        {{/if}}
+                        {{#if isFree}}
+                         <span class="badge text-bg-secondary mt-2">Безкоштовна доставка</span>
+                        {{/if}}
+
+                        <h5>{{name}}</h5>
+                        {{#with review}}
+                         <p>{{amount}} {{text}}</p>
+                        {{/with}}
+                        <h4>{{price}}</h4>
+                        <p>{{delivery}}</p>
+                        {{#each buttons}}
+                            {{#if isPrimary}}
+                            <a class="btn btn-primary mt-2" href="{{link}}">{{text}}</a>
+                            {{/if}}
+                            {{#if isSecondary}}
+                            <a class="btn btn-secondary mt-2 mb-4" href="{{link}}">{{text}}</a>
+                            {{/if}}
+                        {{/each}}
+                        {{#each characteristics}}
+                        <ul>
+                            <li>
+                                <p>{{title}}: {{value}}</p>
+                            </li>
+                        </ul>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/each}}        
+    </div>  
+     {{> shopaction}}
+  </div>
+</main>
