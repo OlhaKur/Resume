@@ -1,0 +1,112 @@
+<main>
+  <div class='row'>
+
+    {{#with formBlock}}
+      <div class='col-8'>
+        <h2 class='my-3 mt-5'>{{header}}</h2>
+        {{#with rating}}
+          <p class='my-2'>{{title}}: {{value}}</p>
+        {{/with}}
+        {{#with actionBlock}}
+
+          {{! Правильний варіант }}
+          <ul class='nav nav-tabs'>
+            {{#each tabs}}
+              <li class='nav-item text-primary'>
+                {{#if isActive}}
+                  <a
+                    class='nav-link active text-strong'
+                  >{{text}}</a>
+                {{else}}
+                  <a class='nav-link'>{{text}}</a>
+                {{/if}}
+              </li>
+            {{/each}}
+          </ul>
+          {{! кінець }}
+
+          {{#with report}}
+            <div class='card mt-3'>
+              <div class='card-body'>
+                <p>{{title}}</p>
+                {{#with button}}
+                  <a
+                    class='btn btn-secondary'
+                    href='{{link}}'
+                  >{{text}}</a>
+                {{/with}}
+              </div>
+            </div>
+          {{/with}}
+        {{/with}}
+
+        {{#with feedbackBlock}}
+          <h3 class='mt-5 mb-3'>{{title}}</h3>
+          {{#each buttons}}
+            {{#if isWarning}}
+              <a
+                class='btn btn-warning'
+                href='{{link}}'
+              >{{text}}</a>
+            {{/if}}
+            {{#if isSuccess}}
+              <a
+                class='btn btn-success'
+                href='{{link}}'
+              >{{text}}</a>
+            {{/if}}
+            {{#if isDanger}}
+              <a
+                class='btn btn-danger'
+                href='{{link}}'
+              >{{text}}</a>
+            {{/if}}
+          {{/each}}
+        {{/with}}
+      </div>
+
+      {{! photo block =======Праворуч!!!}}
+      <div class='col-4'>
+        {{#with goodsInfo}}
+          <div class='card mt-5'>
+            <div class='card-body'>
+              <img src='{{photo}}' />
+              <h5>{{name}}</h5>
+            </div>
+          </div>
+          <div class='card my-3'>
+            <div class='card-body'>
+              <h4>{{price}}</h4>
+              {{#each buttons}}
+                {{#if isPrimary}}
+                  <a
+                    class='btn btn-primary'
+                    href='{{link}}'
+                  >{{text}}</a>
+                {{/if}}
+                {{#if isSecondary}}
+                  <a
+                    class='btn btn-secondary'
+                    href='{{link}}'
+                  >{{text}}</a>
+                {{/if}}
+              {{/each}}
+            </div>
+          </div>
+          <div class='card'>
+            <div class='card-body'>
+              {{#with seller}}
+                <p>{{title}}: <strong>{{value}}</strong></p>
+              {{/with}}
+            </div>
+          </div>
+        {{/with}}
+      </div>
+      {{! Кінець правого блоку }}
+    {{/with}}
+    {{! Кінець Formblock }}
+    <hr class='my-5' />
+{{> reviewItem}}
+{{> shopaction}}
+  </div>
+</main>
