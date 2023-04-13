@@ -1,137 +1,218 @@
 <main>
   <div class='row'>
     <h2 class='m-5'>{{header}}</h2>
-    <div class='col-12'>
-      {{#with purchase}}
-        <ul class='nav nav-tabs card-header-tabs'>
-          {{#each tabs}}
-            <li class='nav-item text-primary'>
-              {{#if @first}}
-                <a
-                  class='nav-link active text-dark'
-                >{{this}}</a>
-              {{/if}}
 
-              {{#if @last}}
-                <a
-                  class='nav-link disabled text-primary'
-                >{{this}}</a>
-              {{/if}}
-            </li>
-          {{/each}}
-        </ul>
+    {{#with purchase}}
+      <ul class='nav nav-tabs'>
+        {{#each tabs}}
+          <li class='nav-item text-primary'>
+            {{#if @first}}
+              <a
+                class='nav-link active text-dark'
+              >{{this}}</a>
+            {{/if}}
 
-        <div class='my-3'>
-          {{#with actionBlock}}
-            {{#with input}}
-              <div class='col-4'>
-                <input
-                  class='form-control'
-                  value='{{placeholder}}'
-                />
-              </div>
-            {{/with}}
+            {{#if @last}}
+              <a
+                class='nav-link disabled text-primary'
+              >{{this}}</a>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
 
-            <div class='col-10 my-3'>
-              {{#each buttons}}
-                {{#if isSuccess}}
-                  <a
-                    class='btn btn-success mx-2'
-                    href='{{link}}'
-                  >{{text}}</a>
-                {{/if}}
-                {{#if isOutline}}
-                  <a
-                    href='{{link}}'
-                    class='btn btn-outline-success mx-2'
-                  >{{text}}</a>
-                {{/if}}
-                {{#if isDanger}}
-                  <a
-                    href='{{link}}'
-                    class='btn btn-outline-danger mx-2'
-                  >{{text}}</a>
-                {{/if}}
-              {{/each}}
+      <div class='my-3'>
+        {{#with actionBlock}}
+          {{#with input}}
+            <div class='col-4'>
+              <input
+                class='form-control'
+                value='{{placeholder}}'
+              />
             </div>
           {{/with}}
-        </div>
 
-        <hr class='my-4' />
-        {{#each itemList}}
-          <table class='table table-borderless'>
-            <thead>
-              <tr>
-                <th>{{number}}</th>
-                <th>{{amount.title}}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <td>
-                {{status}}
-              </td>
-              <td>
-                {{amount.value}}
-              </td>
-              <td class='mt-0'>
-                {{#each images}}
-                  <img src='{{this}}' />
-                {{/each}}
-              </td>
+          <div class='col-10 my-3'>
+            {{#each buttons}}
+              {{#if isSuccess}}
+                <a
+                  class='btn btn-success mx-2'
+                  href='{{link}}'
+                >{{text}}</a>
+              {{/if}}
+              {{#if isOutline}}
+                <a
+                  href='{{link}}'
+                  class='btn btn-outline-success mx-2'
+                >{{text}}</a>
+              {{/if}}
+              {{#if isDanger}}
+                <a
+                  href='{{link}}'
+                  class='btn btn-outline-danger mx-2'
+                >{{text}}</a>
+              {{/if}}
+            {{/each}}
+          </div>
+        {{/with}}
+      </div>
 
-              {{#with button}}
-                <td>
-                  {{#if isPrimary}}
-                    <a
-                      class='btn btn-primary'
-                      href='{{link}}'
-                    >{{text}}</a>
-                  {{/if}}
-                </td>
+      <hr class='my-4' />
+      {{#each itemList}}
+        <div class='card p-2'>
+          <div class='card-body row'>
+            <div class='col-3'>
+              {{number}}
+              <h5>{{status}}</h5>
+            </div>
+            <div class='col-2'>
+              {{#with amount}}
+                <div class='my-2'>{{title}}</div>
+                <h4>{{value}}</h4>
               {{/with}}
-            </tbody>
-          </table>
-        {{/each}}
-      {{/with}}
-      <hr class='my-3' />
+            </div>
+            <div class='col-4'>
+              {{#each images}}
+                <img src='{{this}}' />
+              {{/each}}
+            </div>
+            <div class='col-3'>
+              {{#with button}}
+                {{#if isPrimary}}
+                  <a
+                    class='btn btn-primary'
+                    href='{{link}}'
+                  >{{text}}</a>
+                {{/if}}
+              {{/with}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    {{/with}}
+    <hr class='my-3' />
 
-      {{#with userInfo}}
-        <h3 class='mt-5 mb-2'>{{title}}</h3>
+    {{#with userInfo}}
+      <h3 class='mt-5 mb-2'>{{title}}</h3>
+      <div class='card'>
+        <div class='card-body'>
+          {{#with profileData}}
+            <h4>{{title}}</h4>
+            {{#with fullName}}
+              <table class='table table-borderless'>
+                <thead class='me-5'>
+                  <tr>
+                    <th>{{surname.title}}</th>
+                    <th>{{name.title}}</th>
+                    <th>{{middleName.title}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <td>{{surname.value}}</td>
+                  <td>{{name.value}}</td>
+                  <td>{{middleName.value}}</td>
+                </tbody>
+              </table>
+            {{/with}}
+            {{#with otherInfo}}
+              <table class='table table-borderless'>
+                <thead class='me-5'>
+                  <tr>
+                    <th>{{birthday.title}}</th>
+                    <th class='ms-0'>{{sex.title}}</th>
+                    <th>{{language.title}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <td>{{birthday.value}}</td>
+                  <td>{{sex.value}}</td>
+                  <td>{{language.value}}</td>
+                </tbody>
+              </table>
+            {{/with}}
+          {{/with}}
+          {{#each buttons}}
+            {{#if isPrimary}}
+              <a
+                class='btn btn-primary mx-5 gx-5'
+                href='{{link}}'
+              >{{text}}</a>
+            {{/if}}
+            {{#if isSecondary}}
+              <a
+                class='btn btn-outline-secondary mx-5 gx-5'
+                href='{{link}}'
+              >{{text}}</a>
+            {{/if}}
+            {{#if isDanger}}
+              <a
+                class='btn btn-outline-danger mx-5 gx-5'
+                href='{{link}}'
+              >{{text}}</a>
+            {{/if}}
+          {{/each}}
+        </div>
+      </div>
+
+      {{#with recipients}}
+        <div class='card my-4'>
+          <div class='card-body'>
+            <h4>{{title}}</h4>
+            {{#each users}}
+              <div class='col-4'>
+                <label class='form-label'>{{name}}</label>
+                <input
+                  class='form-control'
+                  value='{{phone}}'
+                />
+                {{#with button}}
+                  <a
+                    class='btn btn-primary'
+                    href='{{link}}'
+                  >{{text}}</a>
+                {{/with}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      {{/with}}
+      {{#with contacts}}
         <div class='card'>
           <div class='card-body'>
-            {{#with profileData}}
-              <h4>{{title}}</h4>
-              {{#with fullName}}
-                <table class='table table-borderless'>
-                  <thead class='me-5'>
-                    <tr>
-                      <th>{{surname.title}}</th>
-                      <th>{{name.title}}</th>
-                      <th>{{middleName.title}}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <td>{{surname.value}}</td>
-                    <td>{{name.value}}</td>
-                    <td>{{middleName.value}}</td>
-                  </tbody>
-                </table>
+            <h4>{{title}}</h4>
+            {{#with contactData}}
+              {{#with phone}}
+                <div class='col-4'>
+                  <label
+                    class='form-label'
+                  >{{title}}</label>
+                  <input
+                    class='form-control'
+                    value='{{value}}'
+                  />
+                </div>
               {{/with}}
-              {{#with otherInfo}}
-                <table class='table table-borderless'>
-                  <thead>
-                    <tr>
-                      <th>{{birthday.title}}</th>
-                      <th>{{sex.title}}</th>
-                      <th>{{language.title}}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <td>{{birthday.value}}</td>
-                    <td>{{sex.value}}</td>
-                    <td>{{language.value}}</td>
-                  </tbody>
-                </table>
+              {{#with additionalPhone}}
+                <div class='col-4'>
+                  <label
+                    class='form-label'
+                  >{{title}}</label>
+                  <input
+                    class='form-control'
+                    value='{{value}}'
+                  />
+                </div>
+              {{/with}}
+              {{#with email}}
+                <div class='col-4 mb-3'>
+                  <label
+                    class='form-label'
+                  >{{title}}</label>
+                  <input
+                    class='form-control'
+                    value='{{value}}'
+                  />
+                </div>
               {{/with}}
             {{/with}}
             {{#each buttons}}
@@ -156,93 +237,9 @@
             {{/each}}
           </div>
         </div>
-
-        {{#with recipients}}
-          <div class='card my-4'>
-            <div class='card-body'>
-              <h4>{{title}}</h4>
-              {{#each users}}
-                <div class='col-4'>
-                  <label class='form-label'>{{name}}</label>
-                  <input
-                    class='form-control'
-                    value='{{phone}}'
-                  />
-                  {{#with button}}
-                    <a
-                      class='btn btn-primary'
-                      href='{{link}}'
-                    >{{text}}</a>
-                  {{/with}}
-                </div>
-              {{/each}}
-            </div>
-          </div>
-        {{/with}}
-        {{#with contacts}}
-          <div class='card'>
-            <div class='card-body'>
-              <h4>{{title}}</h4>
-              {{#with contactData}}
-                {{#with phone}}
-                  <div class='col-4'>
-                    <label
-                      class='form-label'
-                    >{{title}}</label>
-                    <input
-                      class='form-control'
-                      value='{{value}}'
-                    />
-                  </div>
-                {{/with}}
-                {{#with additionalPhone}}
-                  <div class='col-4'>
-                    <label
-                      class='form-label'
-                    >{{title}}</label>
-                    <input
-                      class='form-control'
-                      value='{{value}}'
-                    />
-                  </div>
-                {{/with}}
-                {{#with email}}
-                  <div class='col-4 mb-3'>
-                    <label
-                      class='form-label'
-                    >{{title}}</label>
-                    <input
-                      class='form-control'
-                      value='{{value}}'
-                    />
-                  </div>
-                {{/with}}
-              {{/with}}
-              {{#each buttons}}
-                {{#if isPrimary}}
-                  <a
-                    class='btn btn-primary mx-5 gx-5'
-                    href='{{link}}'
-                  >{{text}}</a>
-                {{/if}}
-                {{#if isSecondary}}
-                  <a
-                    class='btn btn-outline-secondary mx-5 gx-5'
-                    href='{{link}}'
-                  >{{text}}</a>
-                {{/if}}
-                {{#if isDanger}}
-                  <a
-                    class='btn btn-outline-danger mx-5 gx-5'
-                    href='{{link}}'
-                  >{{text}}</a>
-                {{/if}}
-              {{/each}}
-            </div>
-          </div>
-        {{/with}}
-
       {{/with}}
-    </div>
+
+    {{/with}}
+
   </div>
 </main>
