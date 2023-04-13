@@ -1,38 +1,42 @@
 {{#each goodsBlock}}
-  <div class='row'>
-    <div class='col-12'>
-      <div class='card'>
-        <div class='card-body'>
-          <div class='col-2'>
-            <img src='{{image}}' />
-          </div>
 
-          <div class='col-6'>
-            <h6>{{name}}</h6>
-            <p>{{description}}</p>
-            {{#with price}}
-              <h6>{{title}}:</h6>
-              <h4>{{value}}</h4>
-            {{/with}}
-          </div>
-          <div class='col-4'>
-            <p>{{amount}}</p>
-            {{#each buttons}}
-              {{#if isPrimary}}
-                <button
-                  class='btn btn-primary'
-                >{{text}}</button>
-              {{/if}}
-              {{#if isDanger}}
-                <button
-                  class='btn btn-outline-danger'
-                >{{text}}</button>
-              {{/if}}
-            {{/each}}
-          </div>
-
-        </div>
+  <div class='card p-2 my-3'>
+    <div class='card-body row'>
+      <div class='col-2'>
+        <img
+          src='{{image}}'
+          class='card-img-aside'
+          alt='pic'
+        />
+      </div>
+      <div class='col-4'>
+        <h4>{{name}}</h4>
+        {{description}}
+      </div>
+      <div class='col-2 my-3'>
+        {{#with price}}
+          <div class='mt-3'>{{title}}</div>
+          <h3>{{value}}</h3>
+        {{/with}}
+      </div>
+      <div class='col-2 my-5 ps-5'>
+        {{amount}}
+      </div>
+      <div class='col-2'>
+        {{#each buttons}}
+          {{#if isPrimary}}
+            <button
+              class='btn btn-primary mb-4'
+            >{{text}}</button>
+          {{/if}}
+          {{#if isDanger}}
+            <button
+              class='btn btn-outline-danger'
+            >{{text}}</button>
+          {{/if}}
+        {{/each}}
       </div>
     </div>
   </div>
+
 {{/each}}
