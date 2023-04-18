@@ -1,6 +1,6 @@
 <div>
   {{#with person}}
-    <div>
+    <div class="mt-5">
       <h1>{{name}}</h1>
     </div>
     <br />
@@ -13,17 +13,13 @@
         </address>
       </div>
     {{/with}}
-    <hr />
-
- 
+    <hr /> 
 </div>
-
-<div>
-   
+<div>   
     {{> title data='Education'}} 
     {{#each education}}     
       <div>
-        <strong>{{university}} | {{major}} | {{degree}}</strong>
+        <strong>{{university}} | {{major}} | {{degree}} | {{graduationYear}}</strong>
       </div>
     {{/each}}
          
@@ -34,31 +30,73 @@
        {{#each workExperience}}
           <div>
             <em>{{title}} | {{company}}</em>
+            <p>({{startDate}} - {{endDate}})</p>
           
             <br />
             <br />
                 <div>
                   {{> title data='Responsibilities'}} 
-                  <ul>
+                  
                      {{#each responsibilities}}
-                    <li>{{name}}</li>
-                    <li>{{isName}}</li>
-                    {{/each}}
-                   
-                  </ul>
-                    
-                     
+                    <p>{{name}} ({{isName}})</p>                   
+                    {{/each}}                                                                                   
                 </div>
-                <div>
-                  <h4>Projects</h4>
-                  <ul>
-                    {{#each employeesgit}}
-                    <li>{{name}}</li>
-                    <li></li>
-                    {{/each}}
-                  </ul>
+                <div class="row">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4>{{industry}} ({{year_founded}})</h4>
+               
+                  
+                      {{#each employees}}
+                      <strong>{{name}}</strong>
+                      <p>{{position}} - {{department}}</p>
+                      <div class="col-6">
+                        <div class="card">
+                          <div class="card-body row">
+                            
+                            {{#each projects}}
+                            <h6>{{name}}</h6>
+                            <p>{{description}} ({{status}})</p>
+                            {{#each teams}}
+                            <h6>{{team_name}}</h6>
+                              {{#with team_leader}}
+                              <strong>{{name}}</strong>
+                              <p>{{title}}
+                                {{email}}
+                              </p>                          
+                              {{/with}}
+                              {{#each team_members}}
+                              <strong>{{name}} </strong>
+                              <p>{{title}}
+                                {{email}}</p>
+                              {{#each skills}}
+                              <ul class="mx-3">
+                                <li>{{this}}</li>
+                              </ul>
+                              
+                              {{/each}}
+                                  {{#each projects}}
+                                    <h6>{{name}}</h6>
+                                    <p>{{description}} ({{technologie}})</p>
+                                    {{#each team_members}}
+                                    <ul class="mx-3">
+                                      <li><em>{{name}}</em>
+                                      <p>{{title}}</p>
+                                      </li>
+                                    </ul>                
+                                    {{/each}}
+                                  {{/each}}
+                              {{/each}}
+
+                            {{/each}}
+                            {{/each}}
+                            </div>
+                          </div>
+                        </div>
+                      {{/each}}
+                  </div>
                 </div>
-            
+            </div>
           </div>
       {{/each}}
     </section>
