@@ -1,4 +1,7 @@
+<main class="p-5">
 <div>
+  <h1>Hello World!</h1>
+  {{> title data="My title"}}
   <div>
     <img src="/svg/img.svg">
     <img src="/svg/user.svg">
@@ -8,11 +11,12 @@
     {{#each list}}
       <li>
 
-       <button {{#if @last}}disabled{{/if}}>{{name}} - {{@index}}</button>
+       <button style="color:crimson;" {{#if @last}}disabled{{/if}}>{{name}} - {{@index}}</button>
        
       </li>
     {{/each}}
   <br />
+  <div style="color:blue;">
      {{#each user}}
       <li>
         {{@key}} -
@@ -24,11 +28,15 @@
         
       </li>
     {{/each}}
+    </div>
   <br />
+  <div style="color:rgb(22, 169, 22);">
      {{#each users}}
       <li>
         {{this}}     
       </li>
     {{/each}}
+    </div>
   </ul>
 </div>
+</main>
